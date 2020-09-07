@@ -1,0 +1,25 @@
+<nav id="para" class="navbar navbar-expand-sm bg-light navbar-dark">
+    <div class="container-fluid">
+      <div class="navbar-header" style="margin-left: 4%">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse1" 
+        style="margin-top: -15px; padding-top: 10px; margin-bottom: -5px">
+          <ul class="nav navbar-nav">
+            <li style="padding-left: 10px; padding-right: 10px; background-color: black; color: #f1f1f1"><p style="margin-top:7px; margin-bottom: -5px; font-weight: bold">StyloMilo Reviews</p></li>
+            <li><a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a></li>
+            <li><a class="nav-link" routerLink="/shampoo" routerLinkActive="active">Hair Shampoo</a></li>
+            <li><a class="nav-link" routerLink="/others" routerLinkActive="active">Mischelleneous</a></li>
+            <li><a class="nav-link" id="hideLogin" routerLink="/login" routerLinkActive="active">Login</a></li>
+            <li><a class="nav-link" id="hideSignUp" routerLink="/reguser" routerLinkActive="active">Sign up</a></li>
+            <li><a class="nav-link" id="hideLogout" routerLink="/logout" routerLinkActive="active">Log out</a></li>
+            <li><a class="nav-link" id="hidemyass" routerLink="/profile" routerLinkActive="active">Profile</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+ </nav>
+<div class="parallax">
+<div class="container">
+    <div style="padding-top: 15px"></div>
+  <router-outlet></router-outlet>
+</div>
+</div>

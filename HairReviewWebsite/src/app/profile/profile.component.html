@@ -1,0 +1,26 @@
+<div class="allprofile">
+  <div class="profileheader">
+    <h2>User Profile Page</h2>
+  </div>
+  <div class="row">
+    <div class="col-7">
+      <div class="profile">
+            <br/>
+          <p><b>Username:</b></p> 
+          <p>{{userarr.username}}</p>
+            <br/>
+          <p><b>Email:</b></p> 
+          <p>{{userarr.email}}</p>
+          <br/>
+      </div>
+    </div>
+    <div class="col-md-5">
+    <div class="profilebuttons">
+        <p>User settings</p>
+        <a [routerLink]="['/changepassword']"  >Change Password</a>
+        <a [routerLink]="['/favourites']">See Favourites</a>
+        <a class="stockholm" [routerLink]="['/logout']" >Logout </a>
+    </div>
+    </div>
+  </div>
+</div>

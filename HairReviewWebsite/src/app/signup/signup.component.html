@@ -1,0 +1,45 @@
+<div class="login">
+    <h2 style="color: black; padding-top: 20px">
+       Sign up for an account 
+    </h2>
+
+    <br/>
+    <br/>
+  <form [formGroup]="myForm" novalidate (ngSubmit)="onSubmit(myForm)">
+    <p><b>Enter a username:</b></p>
+    <p><input formControlName="name" id="name" placeholder="Your name"/></p>
+    <br/>
+    <p><b>Enter a password:</b></p>
+    <p><input formControlName="password" id="password" placeholder="Your password" /><br>
+    <i style="font-size: 12px; color: #5e5e5e;">* min of 8 characters is needed!</i></p>
+    <br/>
+    <p><b>Enter password again:</b></p>
+    <p><input formControlName="confirmpassword" id="password" placeholder="Enter password again" /></p>
+    <br/>
+    <p><b>Enter an email:</b></p>
+    <p><input formControlName="email" id="email" placeholder="Your email" /></p>
+    <br/>
+    <br/>
+    <p><button class="btn btn-primary" type="submit" [disabled]="!(myForm.valid)">Register</button></p>
+  </form>
+  <div class="row">
+      <div *ngIf="myForm.invalid" class ="col-sm-6 col-sm-offset-3">
+     <p *ngIf="myForm.controls.name.dirty &&
+      myForm.controls.name.hasError('required')">
+     * Name is required!
+     </p>
+     <p *ngIf="myForm.controls.email.dirty &&
+      myForm.controls.email.hasError('required')">
+      * Email is required!
+     </p>
+     <p *ngIf="myForm.controls.email.dirty &&
+      myForm.controls.email.hasError('email')">
+     * Email is invalid!
+     </p>
+     <p *ngIf="myForm.controls.password.dirty &&
+     myForm.controls.password.hasError('required')">
+     * Password is required!
+     </p>
+      </div>
+     </div>
+</div>

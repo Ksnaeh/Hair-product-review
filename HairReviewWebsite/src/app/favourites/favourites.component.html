@@ -1,0 +1,36 @@
+<div style="background-color: #FFFFFF80; border-radius: 5px; margin-bottom: 20px; width: 60%; margin-left: 21.5%">
+  <div style="text-align:center">
+      <h2 style="padding-bottom: 5px; padding-top: 5px">
+      Your Favourites
+      </h2>
+  </div>
+</div>
+
+<div style="background-color: #FFFFFF80; border-radius: 5px; margin-bottom: 20px; width: 60%; margin-left: 21.5%">
+    <p *ngIf = "favstring == null"> There is nothing in favourites!</p>
+  <div style="padding-top: 3%">
+      <div class="row" *ngFor="let post of fav_array">
+        <div class="col-md-10">
+          <div class="card" style="width: 100%; margin-left: 10%;">
+            <div class="card-header">  
+              <h4>{{ post.productName }}</h4>     
+            </div>
+            <div class="card-body">
+            <table style="text-align: center; margin-left: 32%">
+                <tr>
+                    <td><p>Added date: </p></td>
+                    <td class="secondtbrow"><p style="margin-left: 10%">{{post.addDate}}</p></td>
+                </tr>
+            </table>
+            <div style="margin-top: 5%"></div>
+            <!-- <a [routerLink]="['/details', post._id]" routerLinkActive="active" class="card-link">More info</a> -->
+            <button type="button" class="btn btn-primary pull-right" style="width: 220px" [routerLink]="['/details', post.productID]" >See product details</button>
+            <br/>
+            <br/>
+            <button class="card-link" class="btn btn-danger" style="width: 220px" (click)="deleteFav(post.favouriteID)">Remove from Favourites</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

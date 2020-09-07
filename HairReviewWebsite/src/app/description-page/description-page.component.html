@@ -1,0 +1,70 @@
+<div style="text-align:center; background-color: #f8f8f89f;; border-radius: 5px; padding-top: 5px; padding-bottom:5px">
+    <h2>
+    Product Description
+    </h2>
+</div>
+<div class="description">
+  <div class="row">
+    <img src="{{post.ProductImg}}" height="250" width="200">
+    <br/>
+    <div class="col">
+    <table>
+      <tr>
+        <td style="width: 600px; font-size: 30px;">{{post.ProductName}}</td>
+        <td style="width: 250px"><button type="button" *ngIf="sessionString != null" style="text-align: right; margin-left: 40%" class="btn btn-warning pull-right" (click)="addtoFavourites(ids, postname)">Add to favourites</button>
+          </td>
+        </tr>
+      </table>
+      <hr>
+      <br/>
+      <br/>
+      <table>
+          <tr>
+            <td>Date Released:</td>
+            <td>{{post.ProductDate}}</td>
+          </tr>
+      <br/>
+      
+          <tr>
+            <td>Product Category:</td>
+            <td>{{post.ProductCategory}}</td>
+          </tr>
+      </table>
+      <br/>
+      <br/>
+      <table>
+          <tr>
+            <td><a href="{{post.ProductLink}}" class="btn btn-info" target="_blank">Link to Purchase</a></td>
+          </tr>
+          <tr>
+              <td style="vertical-align: bottom; color: rgb(58, 58, 58); font-size: 12px"><i>*purchase at a third-party partnered website</i></td>
+          </tr>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+      <table style="margin-left: 35px; margin-top: 5px">
+        <tr>
+          <td><button type="button" class="btn btn-success pull-right" style="margin-left: 5px; margin-right: 5px"  (click)="upvoteClick1(ids, postupvote)">⬆</button></td>
+          <td style="vertical-align: center;font-size: 30px; font-weight: bold; padding-left: 5px; padding-right: 5px">{{post.ProductUpvote}}</td>
+          <td><button type="button"  class="btn btn-danger pull-right" style="margin-left: 5px; margin-right: 5px"  (click)="downvoteClick1(ids, postupvote)">⬇</button></td>
+        </tr>
+      </table>
+    </div>
+    <br/>
+    <br/>
+    <table>
+      <tr>
+        <td style="width: 150px; vertical-align: top; text-align: right">Product Description:</td>
+        <td style="width: 910px; vertical-align: top; padding-left: 10px">{{post.ProductDesc}}</td>
+      </tr>
+      <br/>
+      <tr>
+        <td style="vertical-align: top; text-align: right">Comments:</td>
+        <td style="padding-left: 10px"><button type="button" class="btn btn-primary-outline pull-right" [routerLink]="['/comments', post._id]">View comments</button></td>
+      </tr>
+    </table>
+    <br/>
+    <br/>
+</div>
+<br/>

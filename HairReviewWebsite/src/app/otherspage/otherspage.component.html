@@ -1,0 +1,58 @@
+<div style="text-align:center; background-color: rgba(255, 255, 255, 0.719); border-radius: 5px; padding-top: 5px; padding-bottom:5px">
+    <h2>
+        Welcome to StyloMilo Reviews!
+    </h2>
+</div>
+<div class="sidenav">
+    <p style="text-align: center">Check out these links!</p>
+    <a style="font-size: 18px" href="https://www.lazada.sg/" target="_blank">Lazada, for your hair products</a>
+    <a style="font-size: 18px" href="http://gatsby.sg/" target="_blank">Gatsby, SG famous</a>
+    <a style="font-size: 18px" href="https://thepanicroom.com.sg/" target="_blank">Panic room, local pomade seller</a>
+</div>
+<input id="searchinput" style="margin-left: 72%; margin-top: 2%" (keyup)="filterList3($event)" placeholder="Search other hair products"/>
+
+<div class="container1">
+
+  <div style="background-color: rgba(255, 255, 255, 0.637); margin-left: 31.5%; border-radius: 5px">
+    <h4 style="padding-left: 60px; padding-top: 5px; padding-bottom: 10px; text-align: left"><b>Other hair products</b></h4>
+  
+  <div class="row" *ngFor="let post of posts">
+    <div class="col-sm-9">
+      <div class="card" style="width: 120%; margin-left: 7%; margin-bottom: 20px">
+        <div class="card-header">  
+          <h4>{{ post.ProductName }}</h4>     
+        </div>
+        <div class="card-body">
+          <div class="col-sm-2">
+            <img src="{{post.ProductImg}}" width="95px" height="150px">
+            </div>
+        <table style="margin-left: 20%">
+            <tr>
+                <td><p>Product Category: </p></td>
+                <td class="secondtbrow"><p style="margin-left: 10%">{{post.ProductCategory}}</p></td>
+              </tr>
+          <tr>
+            <td><p>Released Date: </p></td>
+            <td class="secondtbrow"><p style="margin-left: 10%">{{post.ProductDate}}</p></td>
+          </tr>
+        </table>
+        <table style="margin-left: 20%">
+          <tr>
+            <td style="padding-right: 15px"><p>Product Upvote: </p></td>
+            <td class="secondtbrow1"><p style="margin-left: 10%"><b>{{post.ProductUpvote}}</b></p> </td>
+            <td class="thirdtbcol">
+                <button type="button" *ngIf="sessionClass != null"  class="btn btn-success pull-right" style="margin-left: 10px"  (click)="upvoteClick(post._id, post.ProductUpvote);">⬆</button>
+                <button type="button" *ngIf="sessionClass != null"  class="btn btn-danger pull-right" style="margin-left: 5px"  (click)="downvoteClick(post._id, post.ProductUpvote);">⬇</button>
+            </td>
+          </tr>
+        </table>
+        <div style="margin-top: 2%;"></div>
+        <!-- <a [routerLink]="['/details', post._id]" routerLinkActive="active" class="card-link">More info</a> -->
+        <button type="button" class="btn btn-primary pull-right" style="margin-left: 3%" [routerLink]="['/details', post._id]" >More info</button>
+        <br/>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

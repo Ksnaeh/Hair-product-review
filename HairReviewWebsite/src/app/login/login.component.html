@@ -1,0 +1,34 @@
+<div class="login">
+<h2 style="color: black; padding-top: 20px">
+  Login page
+</h2>
+<br/>
+<br/>
+<form [formGroup]="myForm" novalidate (ngSubmit)="onSubmit(myForm)">
+  <p><b>Username:</b></p>
+  <p><input style="margin-left: 5px" formControlName="name" id="name" placeholder="Your name"/></p>
+  <br/>
+  <p><b>Password:</b></p>
+  <p><input style="margin-left: 10px" formControlName="password" id="password" type="password" placeholder="Your
+  password" /></p>
+  <br/>
+  <br/>
+  <button class="btn btn-primary" style="width: 140px" type="submit" [disabled]="!(myForm.valid)">Login</button>
+  <br/>
+  <br/>
+  <button class="btn btn-primary" routerLink="/reguser" routerLinkActive="active">Register here!</button>
+</form>
+  <div class="row">
+      <div *ngIf="myForm.invalid" class ="col-sm-6 col-sm-offset-3">
+        <p *ngIf="myForm.controls.name.dirty &&
+          myForm.controls.name.hasError('required')">
+        * Name is required!
+        </p>   
+        <p *ngIf="myForm.controls.password.dirty &&
+        myForm.controls.password.hasError('required')">
+        * Password is required!
+        </p>
+      </div>
+  </div>
+  <br/>
+</div>

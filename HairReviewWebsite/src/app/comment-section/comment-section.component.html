@@ -1,0 +1,28 @@
+<div class="commentcon">
+    <div style="margin-bottom: 20px">
+      <h2 style="text-align: center; margin: auto; padding-top: 10px">Comments</h2>
+      <button (click)="returnez()" class="btn btn-primary" id="backcommentbut">Back</button>
+      <button [routerLink]="['/addcomment', ids]" routerLinkActive="active" class="btn btn-primary" id="addcommentbut">Add comment</button>
+    </div>
+    <p *ngIf = "commenttext == null"> There are no comments, be the first add a comment now!</p>
+    <div class="row" *ngFor="let post of test" id="commentboxes">
+      <div class="card" style=" width: 100%; margin-bottom: 20px">
+        <p class="card-header" style="font-size: 18px;">{{post.CommentBruk}}</p>
+        <table style="margin-right: 20px; margin-bottom: 20px; margin-left: 20px; margin-top: 10px; font-size: 14px">
+          <tr>
+            <td style="width: 120px"><p class="card-text" style="color: rgb(58, 58, 58)"><i>Date Posted: </i></p></td>
+            <td><p class="card-text" style="color: rgb(58, 58, 58)"><i>{{post.CommentDato}}</i></p></td>
+          </tr>
+          <br/>
+          <tr>
+            <td style="vertical-align: top">User comment:</td>
+            <td>{{post.CommentBeskriv}}</td>
+          </tr>
+        </table>
+        <button class="btn btn-danger pull-right" style="width: 100px; margin-left: 20px" *ngIf="post.CommentBruk == hehexd" (click)="deleteCom(post.ID)">Delete </button>
+        <br/>
+      </div>
+
+  </div>
+</div>
+

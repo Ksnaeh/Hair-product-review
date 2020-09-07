@@ -1,0 +1,19 @@
+<div class="commentcon">
+    <h2 style="text-align: center; margin: auto; padding-top: 10px">Add Comment</h2>
+    <button class="btn btn-primary" (click)="goBack()" style="float: left; margin-left: 20px; margin-top: -37px">Back</button>
+    <br/>
+  <div class="card" id="formcardsettings">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)" style="margin-top: 10px">
+           <p>
+             <textarea rows="4" cols="73" formControlName="commentdesc" id="quote"
+             placeholder="Enter your comment here"></textarea>
+           </p>
+           <div style="margin-bottom: 20px">
+             <button class="btn btn-primary"
+             type="submit">Add comment</button>
+           </div>
+     </form>
+     </div>
+     <br/>
+     <br/>
+</div>
