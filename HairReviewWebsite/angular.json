@@ -62,7 +62,8 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "FWEBproject:build:production"
+              "browserTarget": "FWEBproject:build:production",
+              "proxyConfig": "proxy.conf.json"
             }
           }
         },

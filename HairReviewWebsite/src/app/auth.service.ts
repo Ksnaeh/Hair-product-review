@@ -10,25 +10,25 @@ export class AuthService {
   }
 
   regUser(username: string, pw: string, em: string) {
-    return this.http.post<any[]>('./api/reguser/', {'username': username,
+    return this.http.post<any[]>('http://localhost:3000/api/reguser/', {'username': username,
    'password': pw, 'email': em });
   }
    
   authUser(username: string, pw: string) {
-    return this.http.post<any[]>('./api/authuser/', {'username': username,
+    return this.http.post<any[]>('http://localhost:3000/api/authuser/', {'username': username,
    'password': pw});
   }
 
   getUser(username: string) {
-    return this.http.get<any[]>('./api/getuser111/' +  username);
+    return this.http.get<any[]>('http://localhost:3000/api/getuser111/' +  username);
   }
 
   getAllUser() {
-    return this.http.get<any[]>('./api/getuser');
+    return this.http.get<any[]>('http://localhost:3000/api/getuser');
   }
 
   updatePassword(username: string, password: string) {
-    return this.http.put<any[]>('./api/updatepassword/', {'username': username, 'password': password});
+    return this.http.put<any[]>('http://localhost:3000/api/updatepassword/', {'username': username, 'password': password});
   }
 
 
